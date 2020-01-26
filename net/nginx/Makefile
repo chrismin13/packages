@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=nginx
 PKG_VERSION:=1.17.7
-PKG_RELEASE:=1
+PKG_RELEASE:=3
 
 PKG_SOURCE:=nginx-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://nginx.org/download/
@@ -438,11 +438,11 @@ endif
 
 ifeq ($(CONFIG_NGINX_HTTP_BROTLI),y)
   define Download/nginx-brotli
-    VERSION:=dc37f658ccb5a51d090dc09d1a2aca2f24309869
+    VERSION:=e505dce68acc190cc5a1e780a3b0275e39f160ca
     SUBDIR:=nginx-brotli
     FILE:=ngx-brotli-module-$$(VERSION).tar.xz
-    URL:=https://github.com/eustas/ngx_brotli.git
-    MIRROR_HASH:=6bc0c40ff24f6e0ac616dfddc803bdc7fcf54764ba9dc4f9cecb3a68beedcdaf
+    URL:=https://github.com/google/ngx_brotli.git
+    MIRROR_HASH:=04847f11ef808fed50f44b2af0ef3abf59ff0ffc06dfc7394d9ab51d53fef31f
     PROTO:=git
   endef
   $(eval $(call Download,nginx-brotli))
@@ -547,11 +547,11 @@ endif
 
 ifeq ($(CONFIG_NGINX_UBUS),y)
   define Download/nginx-ubus-module
-    VERSION:=4547af00991357c9bc3bf4266b7c1547841bf204
+    VERSION:=f30b0167a2cdb40f23bd90928d601bdb0c1b8fad
     SUBDIR:=nginx-ubus-module
     FILE:=nginx-ubus-module-$$(VERSION).tar.xz
     URL:=https://github.com/Ansuel/nginx-ubus-module.git
-    MIRROR_HASH:=4e354934bd5fbd82b3d4c5ada19459c0f12162186a7a101a6426e2e1f30a8236
+    MIRROR_HASH:=02c7d4b0df7f4b69605e71b0fefdc99b5a9470c68cad7ccfb31ebefe4e7e0704
     PROTO:=git
   endef
   $(eval $(call Download,nginx-ubus-module))
